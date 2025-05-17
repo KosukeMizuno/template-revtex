@@ -1,4 +1,6 @@
 $root_doc = 'src/main.tex';
+$out_dir = 'src';
+$aux_dir = 'src/tempfiles';
 $pdf_mode = 1;
 $bibtex_use = 1;
 $interaction = 'nonstopmode';
