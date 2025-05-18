@@ -14,24 +14,13 @@
       system:
       let
         pkgs = import nixpkgs { inherit system; };
-        tex = pkgs.texlive.combine {
-          inherit (pkgs.texlive)
-            scheme-medium
-            revtex
-            latexmk
-            amsmath
-            hyperref
-            graphics
-            bibtex
-            xcolor
-            ;
-        };
       in
       {
         devShells.default = pkgs.mkShell {
           packages = [
-            tex
+            pkgs.texliveFull
             pkgs.git
+            pkgs.arxiv-latex-cleaner
           ];
           shellHook = ''
             echo "nix shell for revtex is loaded."
